@@ -64,7 +64,9 @@ var useSpeechSynthesis = function useSpeechSynthesis() {
         _args$rate = args.rate,
         rate = _args$rate === undefined ? 1 : _args$rate,
         _args$pitch = args.pitch,
-        pitch = _args$pitch === undefined ? 1 : _args$pitch;
+        pitch = _args$pitch === undefined ? 1 : _args$pitch,
+        _args$volume = args.volume,
+        volume = _args$volume === undefined ? 0.5 : _args$volume;
 
     setSpeaking(true);
     // Firefox won't repeat an utterance that has been
@@ -75,6 +77,7 @@ var useSpeechSynthesis = function useSpeechSynthesis() {
     utterance.onend = handleEnd;
     utterance.rate = rate;
     utterance.pitch = pitch;
+    utterance.volume = volume;
     window.speechSynthesis.speak(utterance);
   };
 
